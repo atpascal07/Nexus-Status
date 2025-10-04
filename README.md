@@ -25,9 +25,9 @@ It is a temporary live demo, all data will be deleted after 10 minutes. Sponsore
 
 - Monitoring uptime for HTTP(s) / TCP / HTTP(s) Keyword / HTTP(s) Json Query / Ping / DNS Record / Push / Steam Game Server / Docker Containers
 - Fancy, Reactive, Fast UI/UX
-- Notifications via Telegram, Discord, Gotify, Slack, Pushover, Email (SMTP), and [90+ notification services, click here for the full list](https://github.com/louislam/uptime-kuma/tree/master/src/components/notifications)
+- Notifications via Telegram, Discord, Gotify, Slack, Pushover, Email (SMTP), and [90+ notification services, click here for the full list](https://github.com/atpascal07/Nexus-Status/tree/master/src/components/notifications)
 - 20-second intervals
-- [Multi Languages](https://github.com/louislam/uptime-kuma/tree/master/src/lang)
+- [Multi Languages](https://github.com/atpascal07/Nexus-Status/tree/master/src/lang)
 - Multiple status pages
 - Map status pages to specific domains
 - Ping chart
@@ -49,7 +49,7 @@ Uptime Kuma is now running on <http://0.0.0.0:3001>.
 > File Systems like **NFS** (Network File System) are **NOT** supported. Please map to a local directory or volume.
 
 > [!NOTE]
-> If you want to limit exposure to localhost (without exposing port for other users or to use a [reverse proxy](https://github.com/louislam/uptime-kuma/wiki/Reverse-Proxy)), you can expose the port like this:
+> If you want to limit exposure to localhost (without exposing port for other users or to use a [reverse proxy](https://github.com/atpascal07/Nexus-Status/wiki/Reverse-Proxy)), you can expose the port like this:
 > 
 > ```bash
 > docker run -d --restart=always -p 127.0.0.1:3001:3001 -v uptime-kuma:/app/data --name uptime-kuma louislam/uptime-kuma:1
@@ -70,8 +70,8 @@ Requirements:
 - [pm2](https://pm2.keymetrics.io/) - For running Uptime Kuma in the background
 
 ```bash
-git clone https://github.com/louislam/uptime-kuma.git
-cd uptime-kuma
+git clone https://github.com/atpascal07/Nexus-Status.git
+cd nexus-status
 npm run setup
 
 # Option 1. Try it
@@ -101,19 +101,19 @@ pm2 save && pm2 startup
 
 If you need more options or need to browse via a reverse proxy, please read:
 
-https://github.com/louislam/uptime-kuma/wiki/%F0%9F%94%A7-How-to-Install
+https://github.com/atpascal07/Nexus-Status/wiki/%F0%9F%94%A7-How-to-Install
 
 ## 🆙 How to Update
 
 Please read:
 
-https://github.com/louislam/uptime-kuma/wiki/%F0%9F%86%99-How-to-Update
+https://github.com/atpascal07/Nexus-Status/wiki/%F0%9F%86%99-How-to-Update
 
 ## 🆕 What's Next?
 
 I will assign requests/issues to the next milestone.
 
-https://github.com/louislam/uptime-kuma/milestones
+https://github.com/atpascal07/Nexus-Status/milestones
 
 ## ❤️ Sponsors
 
