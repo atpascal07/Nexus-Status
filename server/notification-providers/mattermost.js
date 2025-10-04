@@ -12,7 +12,7 @@ class Mattermost extends NotificationProvider {
         const okMsg = "Sent Successfully.";
 
         try {
-            const mattermostUserName = notification.mattermostusername || "Nexus-Status";
+            const mattermostUserName = notification.mattermostusername || "Uptime Kuma";
             // If heartbeatJSON is null, assume non monitoring notification (Certificate warning) or testing.
             if (heartbeatJSON == null) {
                 let mattermostTestData = {

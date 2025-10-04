@@ -26,14 +26,14 @@ class SetupDatabase {
     runningSetup = false;
     /**
      * @inheritDoc
-     * @type {NexusStatusServer}
+     * @type {UptimeKumaServer}
      * @private
      */
     server;
 
     /**
      * @param  {object} args The arguments passed from the command line
-     * @param  {NexusStatusServer} server the main server instance
+     * @param  {UptimeKumaServer} server the main server instance
      */
     constructor(args, server) {
         this.server = server;

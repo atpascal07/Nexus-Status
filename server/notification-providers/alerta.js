@@ -22,7 +22,7 @@ class Alerta extends NotificationProvider {
                 environment: notification.alertaEnvironment,
                 severity: "critical",
                 correlate: [],
-                service: [ "NexusStatus" ],
+                service: [ "UptimeKuma" ],
                 value: "Timeout",
                 tags: [ "uptimekuma" ],
                 attributes: {},

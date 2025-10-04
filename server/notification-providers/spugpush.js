@@ -13,15 +13,15 @@ class SpugPush extends NotificationProvider {
         let okMsg = "Sent Successfully.";
         try {
             let formData = {
-                title: "Nexus-Status Message",
+                title: "Uptime Kuma Message",
                 content: msg
             };
             if (heartbeatJSON) {
                 if (heartbeatJSON["status"] === UP) {
-                    formData.title = `NexusStatus 「${monitorJSON["name"]}」 is Up`;
+                    formData.title = `UptimeKuma 「${monitorJSON["name"]}」 is Up`;
                     formData.content = `[✅ Up] ${heartbeatJSON["msg"]}`;
                 } else if (heartbeatJSON["status"] === DOWN) {
-                    formData.title = `NexusStatus 「${monitorJSON["name"]}」 is Down`;
+                    formData.title = `UptimeKuma 「${monitorJSON["name"]}」 is Down`;
                     formData.content = `[🔴 Down] ${heartbeatJSON["msg"]}`;
                 }
             }

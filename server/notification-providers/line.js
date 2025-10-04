@@ -36,7 +36,7 @@ class Line extends NotificationProvider {
                     "messages": [
                         {
                             "type": "text",
-                            "text": "NexusStatus Alert: [🔴 Down]\n" +
+                            "text": "UptimeKuma Alert: [🔴 Down]\n" +
                                 "Name: " + monitorJSON["name"] + " \n" +
                                 heartbeatJSON["msg"] +
                                 `\nTime (${heartbeatJSON["timezone"]}): ${heartbeatJSON["localDateTime"]}`
@@ -50,7 +50,7 @@ class Line extends NotificationProvider {
                     "messages": [
                         {
                             "type": "text",
-                            "text": "NexusStatus Alert: [✅ Up]\n" +
+                            "text": "UptimeKuma Alert: [✅ Up]\n" +
                                 "Name: " + monitorJSON["name"] + " \n" +
                                 heartbeatJSON["msg"] +
                                 `\nTime (${heartbeatJSON["timezone"]}): ${heartbeatJSON["localDateTime"]}`

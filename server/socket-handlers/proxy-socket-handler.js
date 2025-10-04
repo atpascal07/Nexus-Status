@@ -1,8 +1,8 @@
 const { checkLogin } = require("../util-server");
 const { Proxy } = require("../proxy");
 const { sendProxyList } = require("../client");
-const { NexusStatusServer } = require("../nexus-status-server");
-const server = NexusStatusServer.getInstance();
+const { UptimeKumaServer } = require("../uptime-kuma-server");
+const server = UptimeKumaServer.getInstance();
 
 /**
  * Handlers for proxy

@@ -26,7 +26,7 @@ class Ntfy extends NotificationProvider {
             if (heartbeatJSON == null) {
                 let ntfyTestData = {
                     "topic": notification.ntfytopic,
-                    "title": (monitorJSON?.name || notification.ntfytopic) + " [Nexus-Status]",
+                    "title": (monitorJSON?.name || notification.ntfytopic) + " [Uptime-Kuma]",
                     "message": msg,
                     "priority": notification.ntfyPriority,
                     "tags": [ "test_tube" ],
@@ -52,7 +52,7 @@ class Ntfy extends NotificationProvider {
                 "topic": notification.ntfytopic,
                 "message": heartbeatJSON.msg,
                 "priority": priority,
-                "title": monitorJSON.name + " " + status + " [Nexus-Status]",
+                "title": monitorJSON.name + " " + status + " [Uptime-Kuma]",
                 "tags": tags,
             };
 

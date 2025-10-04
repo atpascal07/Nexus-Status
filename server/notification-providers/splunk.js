@@ -13,21 +13,21 @@ class Splunk extends NotificationProvider {
     async send(notification, msg, monitorJSON = null, heartbeatJSON = null) {
         try {
             if (heartbeatJSON == null) {
-                const title = "Nexus-Status Alert";
+                const title = "Uptime Kuma Alert";
                 const monitor = {
                     type: "ping",
-                    url: "Nexus-Status Test Button",
+                    url: "Uptime Kuma Test Button",
                 };
                 return this.postNotification(notification, title, msg, monitor, "trigger");
             }
 
             if (heartbeatJSON.status === UP) {
-                const title = "Nexus-Status Monitor ✅ Up";
+                const title = "Uptime Kuma Monitor ✅ Up";
                 return this.postNotification(notification, title, heartbeatJSON.msg, monitorJSON, "recovery");
             }
 
             if (heartbeatJSON.status === DOWN) {
-                const title = "Nexus-Status Monitor 🔴 Down";
+                const title = "Uptime Kuma Monitor 🔴 Down";
                 return this.postNotification(notification, title, heartbeatJSON.msg, monitorJSON, "trigger");
             }
         } catch (error) {
@@ -89,15 +89,15 @@ class Splunk extends NotificationProvider {
             data: {
                 message_type: eventAction,
                 state_message: `[${title}] [${monitorUrl}] ${body}`,
-                entity_display_name: "Nexus-Status Alert: " + monitorInfo.name,
+                entity_display_name: "Uptime Kuma Alert: " + monitorInfo.name,
                 routing_key: notification.pagerdutyIntegrationKey,
-                entity_id: "Nexus-Status/" + monitorInfo.id,
+                entity_id: "Uptime Kuma/" + monitorInfo.id,
             }
         };
 
         const baseURL = await setting("primaryBaseURL");
         if (baseURL && monitorInfo) {
-            options.client = "Nexus-Status";
+            options.client = "Uptime Kuma";
             options.client_url = baseURL + getMonitorRelativeURL(monitorInfo.id);
         }
 

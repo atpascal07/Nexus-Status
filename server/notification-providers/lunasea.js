@@ -16,7 +16,7 @@ class LunaSea extends NotificationProvider {
             const target = this.getTarget(notification);
             if (heartbeatJSON == null) {
                 let testdata = {
-                    "title": "Nexus-Status Alert",
+                    "title": "Uptime Kuma Alert",
                     "body": msg,
                 };
                 await axios.post(`${url}/custom/${target}`, testdata);
@@ -25,7 +25,7 @@ class LunaSea extends NotificationProvider {
 
             if (heartbeatJSON["status"] === DOWN) {
                 let downdata = {
-                    "title": "NexusStatus Alert: " + monitorJSON["name"],
+                    "title": "UptimeKuma Alert: " + monitorJSON["name"],
                     "body": "[🔴 Down] " +
                         heartbeatJSON["msg"] +
                         `\nTime (${heartbeatJSON["timezone"]}): ${heartbeatJSON["localDateTime"]}`
@@ -36,7 +36,7 @@ class LunaSea extends NotificationProvider {
 
             if (heartbeatJSON["status"] === UP) {
                 let updata = {
-                    "title": "NexusStatus Alert: " + monitorJSON["name"],
+                    "title": "UptimeKuma Alert: " + monitorJSON["name"],
                     "body": "[✅ Up] " +
                         heartbeatJSON["msg"] +
                         `\nTime (${heartbeatJSON["timezone"]}): ${heartbeatJSON["localDateTime"]}`

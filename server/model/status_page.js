@@ -1,7 +1,7 @@
 const { BeanModel } = require("redbean-node/dist/bean-model");
 const { R } = require("redbean-node");
 const cheerio = require("cheerio");
-const { NexusStatusServer } = require("../nexus-status-server");
+const { UptimeKumaServer } = require("../uptime-kuma-server");
 const jsesc = require("jsesc");
 const googleAnalytics = require("../google-analytics");
 const { marked } = require("marked");
@@ -32,7 +32,7 @@ class StatusPage extends BeanModel {
         if (statusPage) {
             response.send(await StatusPage.renderRSS(statusPage, slug));
         } else {
-            response.status(404).send(NexusStatusServer.getInstance().indexHTML);
+            response.status(404).send(UptimeKumaServer.getInstance().indexHTML);
         }
     }
 
@@ -57,7 +57,7 @@ class StatusPage extends BeanModel {
         if (statusPage) {
             response.send(await StatusPage.renderHTML(indexHTML, statusPage));
         } else {
-            response.status(404).send(NexusStatusServer.getInstance().indexHTML);
+            response.status(404).send(UptimeKumaServer.getInstance().indexHTML);
         }
     }
 
@@ -133,7 +133,7 @@ class StatusPage extends BeanModel {
         head.append(ogDescription);
 
         // Preload data
-        // Add jsesc, fix https://github.com/your-org/nexus-status/issues/2186
+        // Add jsesc, fix https://github.com/louislam/uptime-kuma/issues/2186
         const escapedJSONObject = jsesc(await StatusPage.getStatusPageData(statusPage), {
             "isScriptContext": true
         });
@@ -474,7 +474,7 @@ class StatusPage extends BeanModel {
             `, [ statusPageId ]);
 
             for (const maintenanceID of maintenanceIDList) {
-                let maintenance = NexusStatusServer.getInstance().getMaintenance(maintenanceID);
+                let maintenance = UptimeKumaServer.getInstance().getMaintenance(maintenanceID);
                 if (maintenance && await maintenance.isUnderMaintenance()) {
                     publicMaintenanceList.push(await maintenance.toPublicJSON());
                 }

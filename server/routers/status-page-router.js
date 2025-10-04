@@ -1,6 +1,6 @@
 let express = require("express");
 const apicache = require("../modules/apicache");
-const { NexusStatusServer } = require("../nexus-status-server");
+const { UptimeKumaServer } = require("../uptime-kuma-server");
 const StatusPage = require("../model/status_page");
 const { allowDevAllOrigin, sendHttpError } = require("../util-server");
 const { R } = require("redbean-node");
@@ -11,7 +11,7 @@ const { UptimeCalculator } = require("../uptime-calculator");
 let router = express.Router();
 
 let cache = apicache.middleware;
-const server = NexusStatusServer.getInstance();
+const server = UptimeKumaServer.getInstance();
 
 router.get("/status/:slug", cache("5 minutes"), async (request, response) => {
     let slug = request.params.slug;

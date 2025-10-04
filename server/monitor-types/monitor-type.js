@@ -18,7 +18,7 @@ class MonitorType {
      * Run the monitoring check on the given monitor
      * @param {Monitor} monitor Monitor to check
      * @param {Heartbeat} heartbeat Monitor heartbeat to update
-     * @param {NexusStatusServer} server Nexus-Status server
+     * @param {UptimeKumaServer} server Uptime Kuma server
      * @returns {Promise<void>}
      */
     async check(monitor, heartbeat, server) {

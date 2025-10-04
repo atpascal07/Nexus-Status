@@ -20,9 +20,9 @@ Advisories only. I will ignore all 3rd-party bug bounty platforms emails.
 
 ## Supported Versions
 
-### Nexus-Status Versions
+### Uptime Kuma Versions
 
-You should use or upgrade to the latest version of Nexus-Status. All `1.X.X`
+You should use or upgrade to the latest version of Uptime Kuma. All `1.X.X`
 versions are upgradable to the latest version.
 
 ### Upgradable Docker Tags

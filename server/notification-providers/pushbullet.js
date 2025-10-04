@@ -23,14 +23,14 @@ class Pushbullet extends NotificationProvider {
             if (heartbeatJSON == null) {
                 let data = {
                     "type": "note",
-                    "title": "Nexus-Status Alert",
+                    "title": "Uptime Kuma Alert",
                     "body": msg,
                 };
                 await axios.post(url, data, config);
             } else if (heartbeatJSON["status"] === DOWN) {
                 let downData = {
                     "type": "note",
-                    "title": "NexusStatus Alert: " + monitorJSON["name"],
+                    "title": "UptimeKuma Alert: " + monitorJSON["name"],
                     "body": "[🔴 Down] " +
                         heartbeatJSON["msg"] +
                         `\nTime (${heartbeatJSON["timezone"]}): ${heartbeatJSON["localDateTime"]}`,
@@ -39,7 +39,7 @@ class Pushbullet extends NotificationProvider {
             } else if (heartbeatJSON["status"] === UP) {
                 let upData = {
                     "type": "note",
-                    "title": "NexusStatus Alert: " + monitorJSON["name"],
+                    "title": "UptimeKuma Alert: " + monitorJSON["name"],
                     "body": "[✅ Up] " +
                         heartbeatJSON["msg"] +
                         `\nTime (${heartbeatJSON["timezone"]}): ${heartbeatJSON["localDateTime"]}`,

@@ -1,7 +1,7 @@
 ---
 name: ❓ Ask for help
 description: |
-  Submit any question related to Nexus-Status
+  Submit any question related to Uptime Kuma
 #title: "[Help]"
 labels: ["help"]
 body:
@@ -31,7 +31,7 @@ body:
         Please review and acknowledge the Security Policy before reporting any security-related issues or bugs. You can find the full Security Policy **[HERE](https://github.com/louislam/uptime-kuma/security/policy)**.
       options:
         - label: |
-            I have read and agree to Nexus-Status's [Security Policy](https://github.com/louislam/uptime-kuma/security/policy).
+            I have read and agree to Uptime Kuma's [Security Policy](https://github.com/louislam/uptime-kuma/security/policy).
           required: true
 
   - type: textarea
@@ -58,9 +58,9 @@ body:
   - type: input
     id: uptime-kuma-version
     attributes:
-      label: 🐻 Nexus-Status Version
+      label: 🐻 Uptime-Kuma Version
       description: |
-        What version of Nexus-Status are you running? Please do not provide Docker tags like `latest` or `1`.
+        What version of Uptime-Kuma are you running? Please do not provide Docker tags like `latest` or `1`.
       placeholder: |
         e.g., 1.23.16 or 2.0.0-beta.2
     validations:
@@ -114,7 +114,7 @@ body:
             - macOS: APFS/ HFS+
             - Windows: NTFS/ReFS
           - **Storage Medium**: HDD/eMMC/SSD/NVMe
-        - **Nexus-Status Setup**:
+        - **Uptime Kuma Setup**:
           - Number of monitors: `X`
     validations:
       required: true

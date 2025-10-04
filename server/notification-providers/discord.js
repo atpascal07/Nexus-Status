@@ -12,7 +12,7 @@ class Discord extends NotificationProvider {
         const okMsg = "Sent Successfully.";
 
         try {
-            const discordDisplayName = notification.discordUsername || "Nexus-Status";
+            const discordDisplayName = notification.discordUsername || "Uptime Kuma";
             const webhookUrl = new URL(notification.discordWebhookUrl);
             if (notification.discordChannelType === "postToThread") {
                 webhookUrl.searchParams.append("thread_id", notification.threadId);
@@ -35,7 +35,7 @@ class Discord extends NotificationProvider {
                     content: msg,
                 };
                 if (!webhookHasAvatar) {
-                    discordtestdata.avatar_url = "https://github.com/your-org/nexus-status/raw/master/public/icon.png";
+                    discordtestdata.avatar_url = "https://github.com/louislam/uptime-kuma/raw/master/public/icon.png";
                 }
                 if (notification.discordChannelType === "createNewForumPost") {
                     discordtestdata.thread_name = notification.postName;
@@ -73,7 +73,7 @@ class Discord extends NotificationProvider {
                     }],
                 };
                 if (!webhookHasAvatar) {
-                    discorddowndata.avatar_url = "https://github.com/your-org/nexus-status/raw/master/public/icon.png";
+                    discorddowndata.avatar_url = "https://github.com/louislam/uptime-kuma/raw/master/public/icon.png";
                 }
                 if (notification.discordChannelType === "createNewForumPost") {
                     discorddowndata.thread_name = notification.postName;
@@ -113,7 +113,7 @@ class Discord extends NotificationProvider {
                     }],
                 };
                 if (!webhookHasAvatar) {
-                    discordupdata.avatar_url = "https://github.com/your-org/nexus-status/raw/master/public/icon.png";
+                    discordupdata.avatar_url = "https://github.com/louislam/uptime-kuma/raw/master/public/icon.png";
                 }
 
                 if (notification.discordChannelType === "createNewForumPost") {

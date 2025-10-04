@@ -18,7 +18,7 @@ const { Proxy } = require("../proxy");
 const { demoMode } = require("../config");
 const version = require("../../package.json").version;
 const apicache = require("../modules/apicache");
-const { NexusStatusServer } = require("../nexus-status-server");
+const { UptimeKumaServer } = require("../uptime-kuma-server");
 const { DockerHost } = require("../docker");
 const Gamedig = require("gamedig");
 const jwt = require("jsonwebtoken");
@@ -85,7 +85,7 @@ class Monitor extends BeanModel {
         let screenshot = null;
 
         if (this.type === "real-browser") {
-            screenshot = "/screenshots/" + jwt.sign(this.id, NexusStatusServer.getInstance().jwtSecret) + ".png";
+            screenshot = "/screenshots/" + jwt.sign(this.id, UptimeKumaServer.getInstance().jwtSecret) + ".png";
         }
 
         const path = preloadData.paths.get(this.id) || [];
@@ -392,7 +392,7 @@ class Monitor extends BeanModel {
             }
 
             // Runtime patch timeout if it is 0
-            // See https://github.com/your-org/nexus-status/pull/3961#issuecomment-1804149144
+            // See https://github.com/louislam/uptime-kuma/pull/3961#issuecomment-1804149144
             if (!this.timeout || this.timeout <= 0) {
                 this.timeout = this.interval * 1000 * 0.8;
             }
@@ -857,10 +857,10 @@ class Monitor extends BeanModel {
                     bean.status = UP;
                     bean.ping = dayjs().valueOf() - startTime;
 
-                } else if (this.type in NexusStatusServer.monitorTypeList) {
+                } else if (this.type in UptimeKumaServer.monitorTypeList) {
                     let startTime = dayjs().valueOf();
-                    const monitorType = NexusStatusServer.monitorTypeList[this.type];
-                    await monitorType.check(this, bean, NexusStatusServer.getInstance());
+                    const monitorType = UptimeKumaServer.monitorTypeList[this.type];
+                    await monitorType.check(this, bean, UptimeKumaServer.getInstance());
                     if (!bean.ping) {
                         bean.ping = dayjs().valueOf() - startTime;
                     }
@@ -875,7 +875,7 @@ class Monitor extends BeanModel {
                         {
                             allowAutoTopicCreation: this.kafkaProducerAllowAutoTopicCreation,
                             ssl: this.kafkaProducerSsl,
-                            clientId: `Nexus-Status/${version}`,
+                            clientId: `Uptime-Kuma/${version}`,
                             interval: this.interval,
                         },
                         JSON.parse(this.kafkaProducerSaslOptions),
@@ -943,7 +943,7 @@ class Monitor extends BeanModel {
                 log.debug("monitor", `[${this.name}] apicache clear`);
                 apicache.clear();
 
-                await NexusStatusServer.getInstance().sendMaintenanceListByUserID(this.user_id);
+                await UptimeKumaServer.getInstance().sendMaintenanceListByUserID(this.user_id);
 
             } else {
                 bean.important = false;
@@ -1019,8 +1019,8 @@ class Monitor extends BeanModel {
                 await beat();
             } catch (e) {
                 console.trace(e);
-                NexusStatusServer.errorLog(e, false);
-                log.error("monitor", "Please report to https://github.com/your-org/nexus-status/issues");
+                UptimeKumaServer.errorLog(e, false);
+                log.error("monitor", "Please report to https://github.com/louislam/uptime-kuma/issues");
 
                 if (! this.isStop) {
                     log.info("monitor", "Try to restart the monitor");
@@ -1346,8 +1346,8 @@ class Monitor extends BeanModel {
                     }
 
                     // Also provide the time in server timezone
-                    heartbeatJSON["timezone"] = await NexusStatusServer.getInstance().getTimezone();
-                    heartbeatJSON["timezoneOffset"] = NexusStatusServer.getInstance().getTimezoneOffset();
+                    heartbeatJSON["timezone"] = await UptimeKumaServer.getInstance().getTimezone();
+                    heartbeatJSON["timezoneOffset"] = UptimeKumaServer.getInstance().getTimezoneOffset();
                     heartbeatJSON["localDateTime"] = dayjs.utc(heartbeatJSON["time"]).tz(heartbeatJSON["timezone"]).format(SQL_DATETIME_FORMAT);
 
                     await Notification.send(JSON.parse(notification.config), msg, monitor.toJSON(preloadData, false), heartbeatJSON);
@@ -1484,7 +1484,7 @@ class Monitor extends BeanModel {
         `, [ monitorID ]);
 
         for (const maintenanceID of maintenanceIDList) {
-            const maintenance = await NexusStatusServer.getInstance().getMaintenance(maintenanceID);
+            const maintenance = await UptimeKumaServer.getInstance().getMaintenance(maintenanceID);
             if (maintenance && await maintenance.isUnderMaintenance()) {
                 return true;
             }

@@ -7,8 +7,8 @@
     <link rel="icon" type="image/svg+xml" href="/icon.svg" />
     <link rel="manifest" href="/manifest.json" />
     <meta name="theme-color" id="theme-color" content="" />
-    <meta name="description" content="Nexus-Status monitoring tool" />
-    <title>Nexus-Status</title>
+    <meta name="description" content="Uptime Kuma monitoring tool" />
+    <title>Uptime Kuma</title>
     <style>
         .noscript-message {
             font-size: 20px;
@@ -18,47 +18,8 @@
             margin: 0 auto;
         }
     </style>
-<style>
-/* ===== Nexus-Status inline design (from user spec) ===== */
-:root{
-    --bg: #0b1220; --surface:#111827; --surface-2:#0f172a; --text:#e5e7eb; --muted:#94a3b8; --border:#1f2937;
-    --ok:#22c55e; --warn:#f59e0b; --down:#ef4444; --accent:#38bdf8; --radius:14px; --shadow:0 10px 30px rgba(0,0,0,.25);
-}
-@media (prefers-color-scheme: light){
-    :root{ --bg:#f8fafc; --surface:#ffffff; --surface-2:#f1f5f9; --text:#0f172a; --muted:#475569; --border:#e2e8f0; }
-}
-html, body{ height:100%; }
-body{ margin:0; font:16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, sans-serif;
-    color:var(--text); background: radial-gradient(1200px 600px at 20% -10%, rgba(56,189,248,.15), transparent 60%), var(--bg);
-    letter-spacing: .2px; }
-a{ color:var(--accent); text-decoration: none; }
-.h1{ margin:0; font-size:1.25rem; } .mt-4{ margin-top:.25rem; } .mt-12{ margin-top:12px; }
-.container{ max-width:960px; margin-inline:auto; padding:24px; }
-header, footer{ background: var(--surface-2); border-bottom:1px solid var(--border); }
-header .container, footer .container{ display:flex; align-items:center; justify-content:space-between; gap:16px; }
-.brand{ display:flex; align-items:center; gap:12px; font-weight:700; }
-.brand .dot{ width:10px; height:10px; border-radius:999px; background:var(--ok); box-shadow:0 0 0 4px rgba(34,197,94,.18); }
-.brand span{ font-size:1.1rem; letter-spacing:.3px; }
-main{ padding-block:28px; }
-.status-banner{ display:flex; align-items:center; gap:12px; padding:16px 18px; border:1px solid var(--border); border-radius:var(--radius);
-    background: linear-gradient(0deg, rgba(255,255,255,.02), rgba(255,255,255,.02)) , var(--surface); box-shadow:var(--shadow); }
-.pulse{ position:relative; width:10px; height:10px; } .pulse::before, .pulse::after{ content:""; position:absolute; inset:0; border-radius:999px; background:var(--ok); }
-.pulse::after{ animation:pulse 1.8s ease-out infinite; } @keyframes pulse{ 0%{ transform:scale(1); opacity:.8 } 100%{ transform:scale(3.2); opacity:0 } }
-.grid{ display:grid; gap:16px; margin-top:18px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-.card{ background: var(--surface); border:1px solid var(--border); border-radius: var(--radius); padding:16px; box-shadow: var(--shadow); }
-.meta{ color:var(--muted); font-size:.9rem; }
-.badge{ display:inline-flex; align-items:center; gap:8px; font-weight:600; font-size:.9rem; padding:6px 10px; border-radius:999px; border:1px solid var(--border); }
-.dot{ width:8px; height:8px; border-radius:999px; }
-.ok{ color:var(--ok); } .warn{ color:var(--warn); } .down{ color:var(--down); }
-.dot.ok{ background:var(--ok); box-shadow:0 0 0 4px rgba(34,197,94,.14) } .dot.warn{ background:var(--warn); box-shadow:0 0 0 4px rgba(245,158,11,.14) } .dot.down{ background:var(--down); box-shadow:0 0 0 4px rgba(239,68,68,.14) }
-.list{ display:grid; gap:10px; margin:0; padding:0; list-style:none; }
-.row{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px 12px; border:1px dashed var(--border); border-radius:12px; background: linear-gradient(0deg, rgba(255,255,255,.02), rgba(255,255,255,.02)); }
-.footnote{ color:var(--muted); font-size:.85rem; }
-.footer{ padding-block:18px; }
-@media (max-width:480px){ header .container{ flex-wrap: wrap; } .status-banner{ align-items:flex-start; flex-direction:column; } }
-</style>
 </head>
-<body class="nexus-theme">
+<body>
 <noscript>
 <div class="noscript-message">
     Sorry, you don't seem to have JavaScript enabled or your browser

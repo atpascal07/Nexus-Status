@@ -1,6 +1,6 @@
 //
 //  bark.js
-//  NexusStatus
+//  UptimeKuma
 //
 //  Created by Lakr Aream on 2021/10/24.
 //  Copyright © 2021 Lakr Aream. All rights reserved.
@@ -12,7 +12,7 @@ const { default: axios } = require("axios");
 
 // bark is an APN bridge that sends notifications to Apple devices.
 
-const barkNotificationAvatar = "https://github.com/your-org/nexus-status/raw/master/public/icon.png";
+const barkNotificationAvatar = "https://github.com/louislam/uptime-kuma/raw/master/public/icon.png";
 const successMessage = "Successes!";
 
 class Bark extends NotificationProvider {
@@ -30,17 +30,17 @@ class Bark extends NotificationProvider {
         }
 
         if (msg != null && heartbeatJSON != null && heartbeatJSON["status"] === UP) {
-            let title = "NexusStatus Monitor Up";
+            let title = "UptimeKuma Monitor Up";
             return await this.postNotification(notification, title, msg, barkEndpoint);
         }
 
         if (msg != null && heartbeatJSON != null && heartbeatJSON["status"] === DOWN) {
-            let title = "NexusStatus Monitor Down";
+            let title = "UptimeKuma Monitor Down";
             return await this.postNotification(notification, title, msg, barkEndpoint);
         }
 
         if (msg != null) {
-            let title = "NexusStatus Message";
+            let title = "UptimeKuma Message";
             return await this.postNotification(notification, title, msg, barkEndpoint);
         }
     }
@@ -59,7 +59,7 @@ class Bark extends NotificationProvider {
             params += "&group=" + notification.barkGroup;
         } else {
             // default name
-            params += "&group=" + "NexusStatus";
+            params += "&group=" + "UptimeKuma";
         }
         // picked a sound, this should follow system's mute status when arrival
         if (notification.barkSound != null) {
@@ -108,7 +108,7 @@ class Bark extends NotificationProvider {
                 body: subtitle,
                 icon: barkNotificationAvatar,
                 sound: notification.barkSound || "telegraph", // default sound is telegraph
-                group: notification.barkGroup || "NexusStatus", // default group is NexusStatus
+                group: notification.barkGroup || "UptimeKuma", // default group is UptimeKuma
             });
         }
         this.checkResult(result);

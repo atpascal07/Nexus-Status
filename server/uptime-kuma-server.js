@@ -13,16 +13,16 @@ const childProcessAsync = require("promisify-child-process");
 const path = require("path");
 const axios = require("axios");
 const { isSSL, sslKey, sslCert, sslKeyPassphrase } = require("./config");
-// DO NOT IMPORT HERE IF THE MODULES USED `NexusStatusServer.getInstance()`, put at the bottom of this file instead.
+// DO NOT IMPORT HERE IF THE MODULES USED `UptimeKumaServer.getInstance()`, put at the bottom of this file instead.
 
 /**
  * `module.exports` (alias: `server`) should be inside this class, in order to avoid circular dependency issue.
- * @type {NexusStatusServer}
+ * @type {UptimeKumaServer}
  */
-class NexusStatusServer {
+class UptimeKumaServer {
     /**
      * Current server instance
-     * @type {NexusStatusServer}
+     * @type {UptimeKumaServer}
      */
     static instance = null;
 
@@ -65,20 +65,20 @@ class NexusStatusServer {
     /**
      * Get the current instance of the server if it exists, otherwise
      * create a new instance.
-     * @returns {NexusStatusServer} Server instance
+     * @returns {UptimeKumaServer} Server instance
      */
     static getInstance() {
-        if (NexusStatusServer.instance == null) {
-            NexusStatusServer.instance = new NexusStatusServer();
+        if (UptimeKumaServer.instance == null) {
+            UptimeKumaServer.instance = new UptimeKumaServer();
         }
-        return NexusStatusServer.instance;
+        return UptimeKumaServer.instance;
     }
 
     /**
      *
      */
     constructor() {
-        // Set axios default user-agent to Nexus-Status/version
+        // Set axios default user-agent to Uptime-Kuma/version
         axios.defaults.headers.common["User-Agent"] = this.getUserAgent();
 
         // Set default axios timeout to 5 minutes instead of infinity
@@ -109,16 +109,16 @@ class NexusStatusServer {
         }
 
         // Set Monitor Types
-        NexusStatusServer.monitorTypeList["real-browser"] = new RealBrowserMonitorType();
-        NexusStatusServer.monitorTypeList["tailscale-ping"] = new TailscalePing();
-        NexusStatusServer.monitorTypeList["dns"] = new DnsMonitorType();
-        NexusStatusServer.monitorTypeList["mqtt"] = new MqttMonitorType();
-        NexusStatusServer.monitorTypeList["smtp"] = new SMTPMonitorType();
-        NexusStatusServer.monitorTypeList["group"] = new GroupMonitorType();
-        NexusStatusServer.monitorTypeList["snmp"] = new SNMPMonitorType();
-        NexusStatusServer.monitorTypeList["mongodb"] = new MongodbMonitorType();
-        NexusStatusServer.monitorTypeList["rabbitmq"] = new RabbitMqMonitorType();
-        NexusStatusServer.monitorTypeList["manual"] = new ManualMonitorType();
+        UptimeKumaServer.monitorTypeList["real-browser"] = new RealBrowserMonitorType();
+        UptimeKumaServer.monitorTypeList["tailscale-ping"] = new TailscalePing();
+        UptimeKumaServer.monitorTypeList["dns"] = new DnsMonitorType();
+        UptimeKumaServer.monitorTypeList["mqtt"] = new MqttMonitorType();
+        UptimeKumaServer.monitorTypeList["smtp"] = new SMTPMonitorType();
+        UptimeKumaServer.monitorTypeList["group"] = new GroupMonitorType();
+        UptimeKumaServer.monitorTypeList["snmp"] = new SNMPMonitorType();
+        UptimeKumaServer.monitorTypeList["mongodb"] = new MongodbMonitorType();
+        UptimeKumaServer.monitorTypeList["rabbitmq"] = new RabbitMqMonitorType();
+        UptimeKumaServer.monitorTypeList["manual"] = new ManualMonitorType();
 
         // Allow all CORS origins (polling) in development
         let cors = undefined;
@@ -521,7 +521,7 @@ class NexusStatusServer {
      * @returns {string} User-Agent
      */
     getUserAgent() {
-        return "Nexus-Status/" + require("../package.json").version;
+        return "Uptime-Kuma/" + require("../package.json").version;
     }
 
     /**
@@ -546,7 +546,7 @@ class NexusStatusServer {
 }
 
 module.exports = {
-    NexusStatusServer
+    UptimeKumaServer
 };
 
 // Must be at the end to avoid circular dependencies

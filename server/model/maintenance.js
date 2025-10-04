@@ -3,7 +3,7 @@ const { parseTimeObject, parseTimeFromTimeObject, log } = require("../../src/uti
 const { R } = require("redbean-node");
 const dayjs = require("dayjs");
 const Cron = require("croner");
-const { NexusStatusServer } = require("../nexus-status-server");
+const { UptimeKumaServer } = require("../uptime-kuma-server");
 const apicache = require("../modules/apicache");
 
 class Maintenance extends BeanModel {
@@ -235,7 +235,7 @@ class Maintenance extends BeanModel {
         } else if (this.strategy === "single") {
             this.beanMeta.job = new Cron(this.start_date, { timezone: await this.getTimezone() }, () => {
                 log.info("maintenance", "Maintenance id: " + this.id + " is under maintenance now");
-                NexusStatusServer.getInstance().sendMaintenanceListByUserID(this.user_id);
+                UptimeKumaServer.getInstance().sendMaintenanceListByUserID(this.user_id);
                 apicache.clear();
             });
         } else if (this.cron != null) {
@@ -253,12 +253,12 @@ class Maintenance extends BeanModel {
 
                     let duration = this.inferDuration(customDuration);
 
-                    NexusStatusServer.getInstance().sendMaintenanceListByUserID(this.user_id);
+                    UptimeKumaServer.getInstance().sendMaintenanceListByUserID(this.user_id);
 
                     this.beanMeta.durationTimeout = setTimeout(() => {
                         // End of maintenance for this timeslot
                         this.beanMeta.status = "scheduled";
-                        NexusStatusServer.getInstance().sendMaintenanceListByUserID(this.user_id);
+                        UptimeKumaServer.getInstance().sendMaintenanceListByUserID(this.user_id);
                     }, duration);
 
                     // Set last start date to current time
@@ -385,7 +385,7 @@ class Maintenance extends BeanModel {
      */
     async getTimezone() {
         if (!this.timezone || this.timezone === "SAME_AS_SERVER") {
-            return await NexusStatusServer.getInstance().getTimezone();
+            return await UptimeKumaServer.getInstance().getTimezone();
         }
         return this.timezone;
     }

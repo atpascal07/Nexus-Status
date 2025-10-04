@@ -3,8 +3,8 @@
  */
 const { TimeLogger } = require("../src/util");
 const { R } = require("redbean-node");
-const { NexusStatusServer } = require("./nexus-status-server");
-const server = NexusStatusServer.getInstance();
+const { UptimeKumaServer } = require("./uptime-kuma-server");
+const server = UptimeKumaServer.getInstance();
 const io = server.io;
 const { setting } = require("./util-server");
 const checkVersion = require("./check-version");
@@ -219,7 +219,7 @@ async function sendRemoteBrowserList(socket) {
  * @returns {Promise<void>}
  */
 async function sendMonitorTypeList(socket) {
-    const result = Object.entries(NexusStatusServer.monitorTypeList).map(([ key, type ]) => {
+    const result = Object.entries(UptimeKumaServer.monitorTypeList).map(([ key, type ]) => {
         return [ key, {
             supportsConditions: type.supportsConditions,
             conditionVariables: type.conditionVariables.map(v => {

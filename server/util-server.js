@@ -218,14 +218,14 @@ exports.pingAsync = function (
  * @param {object} options Kafka client options. Contains ssl, clientId,
  * allowAutoTopicCreation and interval (interval defaults to 20,
  * allowAutoTopicCreation defaults to false, clientId defaults to
- * "Nexus-Status" and ssl defaults to false)
+ * "Uptime-Kuma" and ssl defaults to false)
  * @param {SASLOptions} saslOptions Options for kafka client
  * Authentication (SASL) (defaults to {})
  * @returns {Promise<string>} Status message
  */
 exports.kafkaProducerAsync = function (brokers, topic, message, options = {}, saslOptions = {}) {
     return new Promise((resolve, reject) => {
-        const { interval = 20, allowAutoTopicCreation = false, ssl = false, clientId = "Nexus-Status" } = options;
+        const { interval = 20, allowAutoTopicCreation = false, ssl = false, clientId = "Uptime-Kuma" } = options;
 
         let connectedToKafka = false;
 

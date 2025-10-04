@@ -1,7 +1,7 @@
 # Project Info
 
 First of all, I want to thank everyone who has submitted issues or shared pull
-requests for Nexus-Status. I never thought the GitHub community would be so nice!
+requests for Uptime Kuma. I never thought the GitHub community would be so nice!
 Because of this, I also never thought that other people would actually read and
 edit my code. Parts of the code are not very well-structured or commented, sorry
 about that.
@@ -27,7 +27,7 @@ development, we run vite in development mode on another port.
 - `src` (Frontend source code)
 - `test` (unit test)
 
-## Can I Create a Pull Request for Nexus-Status?
+## Can I Create a Pull Request for Uptime Kuma?
 
 Whether or not you can create a pull request depends on the nature of your
 contribution. We value both your time and our maintainers' time, so we want to
@@ -224,9 +224,9 @@ to review the appropriate one for your contribution.
 
   ## Steps to Submit a Pull Request
 
-  1. **Fork** the [Nexus-Status repository].
+  1. **Fork** the [Uptime-Kuma repository].
 
-  [Nexus-Status repository]: https://github.com/louislam/uptime-kuma/
+  [Uptime-Kuma repository]: https://github.com/louislam/uptime-kuma/
 
   2. **Clone** your forked repository to your local machine.
   3. **Create a new branch** for your changes (e.g.,
@@ -328,7 +328,7 @@ to review the appropriate one for your contribution.
   not get merged / not get merged quickly. Such changes require a major version
   release.
 - **Test your code** before submitting a PR. Buggy PRs will not be merged.
-- Make sure the **UI/UX is close to Nexus-Status**.
+- Make sure the **UI/UX is close to Uptime Kuma**.
 - **Think about the maintainability**: Don't add functionality that is
   completely **out of scope**. Keep in mind that we need to be able to maintain
   the functionality.
@@ -364,7 +364,7 @@ direction and scope of the feature, ensuring it doesn't conflict with existing
 or planned work. It also provides an opportunity to identify potential pitfalls
 early on, helping to avoid issues down the line.
 
-1. **Fork** the [Nexus-Status repository].
+1. **Fork** the [Uptime-Kuma repository].
 2. **Clone** your forked repository to your local machine.
 3. **Create a new branch** for your changes (e.g.,
    `feature/add-new-notification-provider-signal`).
@@ -442,7 +442,7 @@ is finalized.
 ## Project Styles
 
 I personally do not like something that requires a lot of configuration before
-you can finally start the app. The goal is to make the Nexus-Status installation
+you can finally start the app. The goal is to make the Uptime Kuma installation
 as easy as installing a mobile app.
 
 - Easy to install for non-Docker users
@@ -561,7 +561,7 @@ npm run build
 
 ### Frontend Details
 
-Nexus-Status Frontend is a single page application (SPA). Most paths are handled
+Uptime Kuma Frontend is a single page application (SPA). Most paths are handled
 by Vue Router.
 
 The router is in `src/router.js`
@@ -615,7 +615,7 @@ is your mother tongue), to avoid merge-conflicts between weblate and `master`.
 The translations can then (after merging a PR into `master`) be translated by
 awesome people donating their language skills.
 
-If you want to help by translating Nexus-Status into your language, please visit
+If you want to help by translating Uptime Kuma into your language, please visit
 the [instructions on how to translate using weblate].
 
 [instructions on how to translate using weblate]:
@@ -652,8 +652,8 @@ repo to do that.
 - `beta2`: Latest beta build
 - `2.x.x-beta.x`
 - `nightly2`: Dev build
-- `base2`: Basic Debian setup without Nexus-Status source code (Full features)
-- `base2-slim`: Basic Debian setup without Nexus-Status source code
+- `base2`: Basic Debian setup without Uptime Kuma source code (Full features)
+- `base2-slim`: Basic Debian setup without Uptime Kuma source code
 - `pr-test2`: For testing pull request without setting up a local environment
 
 #### v1
@@ -663,9 +663,9 @@ repo to do that.
 - `1.x.x-beta.x`: Beta build
 - `beta`: Latest beta build
 - `nightly`: Dev build
-- `base-debian`: Basic Debian setup without Nexus-Status source code
+- `base-debian`: Basic Debian setup without Uptime Kuma source code
 - `pr-test`: For testing pull request without setting up a local environment
-- `base-alpine`: (Deprecated) Basic Alpine setup without Nexus-Status source code
+- `base-alpine`: (Deprecated) Basic Alpine setup without Uptime Kuma source code
 - `1-alpine`, `alpine`: (Deprecated)
 - `1.x.x-alpine`: (Deprecated)
 

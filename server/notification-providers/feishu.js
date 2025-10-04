@@ -34,7 +34,7 @@ class Feishu extends NotificationProvider {
                         header: {
                             title: {
                                 tag: "plain_text",
-                                content: "NexusStatus Alert: [Down] " + monitorJSON["name"],
+                                content: "UptimeKuma Alert: [Down] " + monitorJSON["name"],
                             },
                             template: "red",
                         },
@@ -64,7 +64,7 @@ class Feishu extends NotificationProvider {
                         header: {
                             title: {
                                 tag: "plain_text",
-                                content: "NexusStatus Alert: [UP] " + monitorJSON["name"],
+                                content: "UptimeKuma Alert: [UP] " + monitorJSON["name"],
                             },
                             template: "green",
                         },

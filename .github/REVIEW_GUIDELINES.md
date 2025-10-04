@@ -1,4 +1,4 @@
-# Nexus-Status Review Guidelines
+# Uptime Kuma Review Guidelines
 
 > [!NOTE]
 > These review guidelines are a work in progress, and are frequently

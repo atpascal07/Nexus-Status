@@ -1,8 +1,8 @@
 const { checkLogin, setSetting, setting, doubleCheckPassword } = require("../util-server");
 const { CloudflaredTunnel } = require("node-cloudflared-tunnel");
-const { NexusStatusServer } = require("../nexus-status-server");
+const { UptimeKumaServer } = require("../uptime-kuma-server");
 const { log } = require("../../src/util");
-const io = NexusStatusServer.getInstance().io;
+const io = UptimeKumaServer.getInstance().io;
 
 const prefix = "cloudflared_";
 const cloudflared = new CloudflaredTunnel();

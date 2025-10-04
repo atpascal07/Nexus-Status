@@ -25,7 +25,7 @@ class OneBot extends NotificationProvider {
                     "Authorization": "Bearer " + notification.accessToken,
                 }
             };
-            let pushText = "NexusStatus Alert: " + msg;
+            let pushText = "UptimeKuma Alert: " + msg;
             let data = {
                 "auto_escape": true,
                 "message": pushText,
