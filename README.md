@@ -6,7 +6,7 @@
 
 Nexus Status is an easy-to-use self-hosted monitoring tool.
 
-<a target="_blank" href="https://github.com/atpascal07/Nexus-Status"><img src="https://img.shields.io/github/stars/atpascal07/Nexus-Status?style=flat" /></a> <a target="_blank" href="https://hub.docker.com/r/atpascal07/Nexus-Status"><img src="https://img.shields.io/docker/pulls/atpascal07/Nexus-Status" /></a> <a target="_blank" href="https://hub.docker.com/r/atpascal07/Nexus-Status"><img src="https://img.shields.io/docker/v/atpascal07/Nexus-Status/latest?label=docker%20image%20ver." /></a> <a target="_blank" href="https://github.com/atpascal07/Nexus-Status"><img src="https://img.shields.io/github/last-commit/atpascal07/Nexus-Status" /></a> 
+<a target="_blank" href="https://github.com/atpascal07/Nexus-Status"><img src="https://img.shields.io/github/stars/atpascal07/Nexus-Status?style=flat" /></a> <a target="_blank" href="https://hub.docker.com/r/atpascal07/Nexus-Status"><img src="https://img.shields.io/docker/pulls/atpascal07/Nexus-Status" /></a> <a target="_blank" href="https://hub.docker.com/r/atpascal/Nexus-Status"><img src="https://img.shields.io/docker/v/atpascal/Nexus-Status/latest?label=docker%20image%20ver." /></a> <a target="_blank" href="https://github.com/atpascal07/Nexus-Status"><img src="https://img.shields.io/github/last-commit/atpascal07/Nexus-Status" /></a> 
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/louislam?label=GitHub%20Sponsors)](https://github.com/sponsors/louislam) <a href="https://weblate.kuma.pet/projects/uptime-kuma/uptime-kuma/">
 <img src="https://weblate.kuma.pet/widgets/uptime-kuma/-/svg-badge.svg" alt="Translation status" />
 </a>
