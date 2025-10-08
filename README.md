@@ -7,7 +7,7 @@
 Nexus Status is an easy-to-use self-hosted monitoring tool.
 
 <a target="_blank" href="https://github.com/atpascal07/Nexus-Status"><img src="https://img.shields.io/github/stars/atpascal07/Nexus-Status?style=flat" /></a> <a target="_blank" href="https://hub.docker.com/r/atpascal/Nexus-Status"><img src="https://img.shields.io/docker/pulls/atpascal/Nexus-Status" /></a> <a target="_blank" href="https://hub.docker.com/r/atpascal/Nexus-Status"><img src="https://img.shields.io/docker/v/atpascal/Nexus-Status/latest?label=docker%20image%20ver." /></a> <a target="_blank" href="https://github.com/atpascal07/Nexus-Status"><img src="https://img.shields.io/github/last-commit/atpascal07/Nexus-Status" /></a> 
-[![GitHub Sponsors](https://img.shields.io/github/sponsors/louislam?label=GitHub%20Sponsors)](https://github.com/sponsors/louislam) <a href="https://weblate.kuma.pet/projects/uptime-kuma/uptime-kuma/">
+ <a href="https://weblate.kuma.pet/projects/uptime-kuma/uptime-kuma/">
 <img src="https://weblate.kuma.pet/widgets/uptime-kuma/-/svg-badge.svg" alt="Translation status" />
 </a>
 
@@ -114,12 +114,6 @@ https://github.com/atpascal07/Nexus-Status/wiki/%F0%9F%86%99-How-to-Update
 I will assign requests/issues to the next milestone.
 
 https://github.com/atpascal07/Nexus-Status/milestones
-
-## ❤️ Sponsors
-
-Thank you so much! (GitHub Sponsors will be updated manually. OpenCollective sponsors will be updated automatically, the list will be cached by GitHub though. It may need some time to be updated)
-
-<img src="https://uptime.kuma.pet/sponsors?v=6" alt />
 
 ## 🖼 More Screenshots
 
