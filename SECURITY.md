@@ -3,10 +3,10 @@
 ## Reporting a Vulnerability
 
 1. Please report security issues to
-   <https://github.com/louislam/uptime-kuma/security/advisories/new>.
+   <https://github.com/atpascal07/Nexus-Status/security/advisories/new>.
 2. Please also create an empty security issue to alert me, as GitHub Advisories
    do not send a notification, I probably will miss it without this.
-   <https://github.com/louislam/uptime-kuma/issues/new?assignees=&labels=help&template=security.md>
+   <https://github.com/atpascal07/Nexus-Status/issues/new?assignees=&labels=help&template=security.md>
 
 Do not use the public issue tracker or discuss it in public as it will cause
 more damage.
@@ -20,9 +20,9 @@ Advisories only. I will ignore all 3rd-party bug bounty platforms emails.
 
 ## Supported Versions
 
-### Uptime Kuma Versions
+### Nexus-Status Versions
 
-You should use or upgrade to the latest version of Uptime Kuma. All `1.X.X`
+You should use or upgrade to the latest version of Nexus Status. All `1.X.X`
 versions are upgradable to the latest version.
 
 ### Upgradable Docker Tags
