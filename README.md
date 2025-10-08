@@ -17,7 +17,7 @@ Nexus Status is an easy-to-use self-hosted monitoring tool.
 
 Try it!
 
-Demo Server (Location: Frankfurt - Germany): https://demo.kuma.pet/start-demo
+Demo Server (Location: Frankfurt - Germany): comming soone
 
 It is a temporary live demo, all data will be deleted after 10 minutes. Sponsored by [Uptime Kuma Sponsors](https://github.com/louislam/uptime-kuma#%EF%B8%8F-sponsors).
 
@@ -49,7 +49,7 @@ Uptime Kuma is now running on <http://0.0.0.0:3001>.
 > File Systems like **NFS** (Network File System) are **NOT** supported. Please map to a local directory or volume.
 
 > [!NOTE]
-> If you want to limit exposure to localhost (without exposing port for other users or to use a [reverse proxy](https://github.com/atpascal07/Nexus-Status/wiki/Reverse-Proxy)), you can expose the port like this:
+> If you want to limit exposure to localhost, you can expose the port like this:
 > 
 > ```bash
 > docker run -d --restart=always -p 127.0.0.1:3001:3001 -v uptime-kuma:/app/data --name uptime-kuma louislam/uptime-kuma:1
@@ -97,17 +97,6 @@ pm2 monit
 pm2 save && pm2 startup
 ```
 
-### Advanced Installation
-
-If you need more options or need to browse via a reverse proxy, please read:
-
-https://github.com/atpascal07/Nexus-Status/wiki/%F0%9F%94%A7-How-to-Install
-
-## 🆙 How to Update
-
-Please read:
-
-https://github.com/atpascal07/Nexus-Status/wiki/%F0%9F%86%99-How-to-Update
 
 ## 🆕 What's Next?
 
@@ -162,25 +151,6 @@ You can mention me if you ask a question on the subreddit.
 
 We DO NOT accept all types of pull requests and do not want to waste your time. Please be sure that you have read and follow pull request rules:
 [CONTRIBUTING.md#can-i-create-a-pull-request-for-uptime-kuma](https://github.com/louislam/uptime-kuma/blob/master/CONTRIBUTING.md#can-i-create-a-pull-request-for-uptime-kuma)
-
-### Test Pull Requests
-
-There are a lot of pull requests right now, but I don't have time to test them all.
-
-If you want to help, you can check this:
-https://github.com/louislam/uptime-kuma/wiki/Test-Pull-Requests
-
-### Test Beta Version
-
-Check out the latest beta release here: https://github.com/louislam/uptime-kuma/releases
-
-### Bug Reports / Feature Requests
-
-If you want to report a bug or request a new feature, feel free to open a [new issue](https://github.com/louislam/uptime-kuma/issues).
-
-### Translations
-
-If you want to translate Uptime Kuma into your language, please visit [Weblate Readme](https://github.com/louislam/uptime-kuma/blob/master/src/lang/README.md).
 
 ### Spelling & Grammar
 
