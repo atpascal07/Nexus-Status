@@ -3,7 +3,7 @@
  * node "server/server.js"
  * DO NOT require("./server") in other modules, it likely creates circular dependency!
  */
-console.log("Welcome to Uptime Kuma");
+console.log("Welcome to Nexus Status");
 
 // As the log function need to use dayjs, it should be very top
 const dayjs = require("dayjs");
@@ -59,7 +59,7 @@ if (process.env.UPTIME_KUMA_WS_ORIGIN_CHECK === "bypass") {
 }
 
 const checkVersion = require("./check-version");
-log.info("server", "Uptime Kuma Version: " + checkVersion.version);
+log.info("server", "Nexus Status Version: " + checkVersion.version);
 
 log.info("server", "Loading modules");
 
